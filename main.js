@@ -43,6 +43,24 @@ del.addEventListener("click", function () {
   value = join;
   displayArea.value = value;
 });
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace") {
+    const split = value.split("");
+    split.pop();
+    const join = split.join("");
+    value = join;
+    displayArea.value = value;
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const results = eval(value);
+    let result = results;
+    displayArea.value = result;
+    value = result;
+  }
+});
+
 // equals.addEventListener("click", function () {
 //   const result = Number(value);
 //   console.log(Number(result));
